@@ -1,4 +1,4 @@
-```Overview
+````Overview
 
 This project is a Java Servlet–based web application that enables users to register students into a relational database and view a list of all registered students.
 It is designed to demonstrate fundamental concepts of Java web development, including HTTP request handling, form processing, JDBC database integration, and deployment using Apache Tomcat with Maven.
@@ -61,21 +61,7 @@ MySQL or PostgreSQL
 
 HTML
 
-Project Structure
-java-record/
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── servlet/
-│       │       ├── RegisterServlet.java
-│       │       └── ShowAllStudentsServlet.java
-│       └── webapp/
-│           ├── register.jsp
-│           ├── show_all.jsp
-│           └── WEB-INF/
-│               └── web.xml
-├── pom.xml
-└── README.md
+
 
 How to Run the Project
 Prerequisites
@@ -145,4 +131,4 @@ POST request handling
 
 Database persistence
 
-GET request data retrieval and display```
+GET request data retrieval and display````
