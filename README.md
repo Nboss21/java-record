@@ -1,35 +1,14 @@
-📌 Project Description
+```Overview
 
-This project is a simple Java Servlet–based web application that allows users to register students into a database and view all registered students in a tabular format.
+This project is a Java Servlet–based web application that enables users to register students into a relational database and view a list of all registered students.
+It is designed to demonstrate fundamental concepts of Java web development, including HTTP request handling, form processing, JDBC database integration, and deployment using Apache Tomcat with Maven.
 
-The application demonstrates core Java EE / Jakarta EE concepts, including:
-
-Java Servlets
-
-HTTP GET and POST handling
-
-Form data validation
-
-Database persistence using JDBC
-
-MVC-style separation (Servlets + Views)
-
-Deployment using Apache Tomcat via Maven
-
-The project fulfills the following requirements:
-
-Register students using a web form
-
-Persist student data in a relational database
-
-Retrieve and display all students in an HTML table
-
-🧱 Application Features
-1️⃣ Student Registration
+Functional Requirements
+Student Registration
 
 Endpoint: POST /register
 
-Input Fields:
+Accepts the following input:
 
 Student Name
 
@@ -37,25 +16,17 @@ Email
 
 Year
 
-Behavior:
+Validates the submitted data
 
-Receives form data via HTTP POST
+Persists the student record into the database
 
-Validates inputs (non-null, correct format)
-
-Inserts a new student record into the database
-
-2️⃣ View All Students
+View All Students
 
 Endpoint: GET /show_all
 
-Behavior:
+Retrieves all student records from the database
 
-Connects to the database
-
-Retrieves all student records
-
-Displays them in an HTML table with:
+Displays them in an HTML table containing:
 
 Name
 
@@ -63,16 +34,20 @@ Email
 
 Year
 
-🗄️ Database Design
-Table: students
-Column Name	Data Type	Constraints
+Database Design
+
+The application uses a relational database to persist student information.
+
+Table Name: students
+
+Column	Data Type	Constraints
 id	INT	Primary Key, Auto Increment
 name	VARCHAR(100)	NOT NULL
 email	VARCHAR(100)	NOT NULL, UNIQUE
 year	INT	NOT NULL
-🛠️ Technologies Used
+Technologies Used
 
-Java (JDK 8+)
+Java (JDK 8 or higher)
 
 Java Servlets
 
@@ -82,14 +57,30 @@ Apache Tomcat 7
 
 Maven
 
-HTML/CSS
+MySQL or PostgreSQL
 
-MySQL / PostgreSQL (any JDBC-compatible DB)
+HTML
 
-⚙️ How to Run the Project
-1️⃣ Prerequisites
+Project Structure
+java-record/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── servlet/
+│       │       ├── RegisterServlet.java
+│       │       └── ShowAllStudentsServlet.java
+│       └── webapp/
+│           ├── register.jsp
+│           ├── show_all.jsp
+│           └── WEB-INF/
+│               └── web.xml
+├── pom.xml
+└── README.md
 
-Make sure you have installed:
+How to Run the Project
+Prerequisites
+
+Ensure the following are installed:
 
 Java JDK 8 or higher
 
@@ -99,11 +90,11 @@ MySQL or PostgreSQL
 
 Git
 
-2️⃣ Clone the Repository
+Step 1: Clone the Repository
 git clone https://github.com/Nboss21/java-record.git
 cd java-record
 
-3️⃣ Configure the Database
+Step 2: Configure the Database
 
 Create the database and table:
 
@@ -119,50 +110,39 @@ CREATE TABLE students (
 );
 
 
-Update the JDBC connection details inside the servlet or database utility class:
+Update the JDBC connection details in the source code to match your database configuration.
 
-String url = "jdbc:mysql://localhost:3306/student_db";
-String username = "root";
-String password = "your_password";
+Step 3: Run the Application
 
-4️⃣ Run the Application (Tomcat via Maven)
+Start the application using Maven and Tomcat:
+
 mvn tomcat7:run
 
 
-Maven will:
+Tomcat will start and deploy the application automatically.
 
-Download dependencies
+Accessing the Application
 
-Start an embedded Tomcat server
-
-Deploy the application automatically
-
-5️⃣ Access the Application
-
-Open your browser and visit:
-
-Student Registration Form
-
+Student Registration:
 http://localhost:8080/java-record/register
 
-
-View All Students
-
+View All Students:
 http://localhost:8080/java-record/show_all
 
-✅ Expected Output
-Registration Page
+Verification Steps
 
-User submits Name, Email, and Year
+Start the application using Maven.
 
-Student is saved to the database
+Submit a student registration form.
 
-Show All Students Page
+Open the “View All Students” page.
 
-Displays an HTML table listing:
+Confirm the submitted student appears in the table.
 
-Name
+Successful completion of these steps verifies:
 
-Email
+POST request handling
 
-Year
+Database persistence
+
+GET request data retrieval and display```
